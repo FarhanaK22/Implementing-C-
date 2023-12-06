@@ -23,7 +23,7 @@ cout<<"area is : "<<e.area<<endl;
 }
 };
 void print_a(equilateralTri e){
-cout<<"\nGiven side  is : "<<e<<endl;
+cout<<"\nGiven side  is : "<<e.a<<endl;
 }
 
 main(){
