@@ -12,6 +12,7 @@ class equilateralTri{
         area=(1.73*a*a)/4;
     }
     friend class trifunctions;
+    friend void print_a(equilateralTri);
 };
 
 class trifunctions{
@@ -21,11 +22,15 @@ cout<<"circumference is : "<<e.circum<<endl;
 cout<<"area is : "<<e.area<<endl;
 }
 };
+void print_a(equilateralTri e){
+cout<<"\nGiven side  is : "<<e<<endl;
+}
 
 main(){
     equilateralTri e1;
     trifunctions t;
     e1.setA(5);
+    print_a(e1);
     t.printresult(e1); 
 
 }
