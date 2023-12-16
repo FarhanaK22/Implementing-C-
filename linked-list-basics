@@ -1,0 +1,72 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+class node{
+    public:
+    int data;
+    node* next;
+    node(int data){
+        this->data=data;
+        this->next=NULL;
+    }
+
+  
+ 
+};
+  void display(node* &head) {
+    node* temp = head;
+    while(temp != NULL) {
+        cout << temp->data << "->";
+        temp = temp->next;
+    }
+    cout << "NULL" << endl;
+}
+    void insert(node* &head,int val){
+       node* new_node= new node(val);
+       if(head==NULL){
+           head=new_node;
+           return ; 
+       }
+       node* temp = head;
+    while(temp->next != NULL){ temp = temp->next;
+    }temp->next = new_node;
+   }
+int main()
+{   node* head=NULL;
+    int choice, val;
+    char ch;
+
+    do { cout<<"MENU:\n1-insert\n2-display\n3-sort\n4-delete\n5-none\n";
+        cout<<"Enter choice-"<<endl;
+       cin>>choice;
+    switch(choice) {
+        case 1: {
+            cout << "Enter 3 values to insert in list: ";
+            int limit = 2;
+            while(limit >= 0) {
+                cin >> val;
+                insert(head, val);
+                limit--;
+            }
+            break;
+        }
+        case 2: {
+            cout << "\n...Displaying the list: ";
+            display(head);
+            break;
+        }
+    }
+    cout << "Do you want to continue? (y/n): ";
+    cin >> ch;
+} while(ch=='y');
+
+    return 0;
+}
